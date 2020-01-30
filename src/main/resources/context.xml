@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.xworkz.Rocket.app.Fuel" id="fuel">
+		<constructor-arg value="4"></constructor-arg>
+	</bean>
+
+	<bean class="com.xworkz.Rocket.app.Satellite" id="satellite">
+		<property name="price" value="450"></property>
+		<property name="name" value="ELS"></property>
+	</bean>
+
+	<bean class="com.xworkz.Rocket.app.Rocket" id="rocket">
+		<constructor-arg ref="fuel" />
+		<property name="sat" ref="satellite"></property>
+		<property name="countryName" value="India"></property>
+	</bean>
+
+	<bean class="com.xworkz.Rocket.app.thread.ThreadImpl" id="threadImpl"></bean>
+
+	<bean class="com.xworkz.Rocket.app.thread.Labour" id="labour">
+		<constructor-arg value="anilyadav"></constructor-arg>
+		<property name="experience" value="3"></property>
+		<property name="ThreadImpl" ref="threadImpl"></property>
+	</bean>
+
+</beans>
